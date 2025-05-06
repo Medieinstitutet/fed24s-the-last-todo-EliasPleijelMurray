@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { Todo } from "./models/Todo";
+import { TodoHtml } from "./components/TodoHtml";
+import { TodoForm } from "./components/TodoForm";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState<Todo[]>([
+    new Todo("Träna", false),
+    new Todo("plugga", false),
+  ]);
+
+  const activeTodos = todos.filter((todo) => !todo.done);
+  const completedTodos = todos.filter((todo) => todo.done);
+
+  const toggleTodo = (clickedTodo: Todo) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === clickedTodo.id) {
+          return { ...todo, done: !todo.done };
+        }
+        return todo;
+      })
+    );
+  };
+
+  const addTodo = (newTodo: Todo) => {
+    setTodos([...todos, new Todo(newTodo.title, newTodo.done)]);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="todos-section">
+        <h2>Active Todos</h2>
+        {activeTodos.map((t) => (
+          <TodoHtml todo={t} key={t.id} toggleTodo={() => toggleTodo(t)} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      {completedTodos.length > 0 && (
+        <div className="completed-todos-section">
+          <h2>Completed Todos</h2>
+          {completedTodos.map((t) => (
+            <TodoHtml todo={t} key={t.id} toggleTodo={() => toggleTodo(t)} />
+          ))}
+        </div>
+      )}
+
+      <TodoForm addTodo={addTodo} />
+    </>
+  );
+}
+export default App;
