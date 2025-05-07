@@ -4,3 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+
+#sort {
+  margin-left: auto;
+}
+
+.todos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
