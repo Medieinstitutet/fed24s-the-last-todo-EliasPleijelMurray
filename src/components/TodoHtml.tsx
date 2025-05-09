@@ -26,7 +26,7 @@ export const TodoHtml = (props: TodoHtmlProps) => {
           onChange={handleChange}
         />
         <h3>{props.todo.title}</h3>
-        <button className="trash-can" onClick={handelClick}>
+        <button className="trash-can-button" onClick={handelClick}>
           <FontAwesomeIcon icon={faTrashCan} />
         </button>
       </div>

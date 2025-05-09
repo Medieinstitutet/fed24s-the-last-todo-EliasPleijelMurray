@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Todo } from "../models/Todo";
+import "./TodoForm.css";
 
 type TodoFormProps = {
   addTodo: (t: Todo) => void;
@@ -19,16 +20,19 @@ export const TodoForm = (props: TodoFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="newTodo">New Todo </label>
+    <form className="add-form" onSubmit={handleSubmit}>
+      <label className="form-label" htmlFor="newTodo">
+        New Todo{" "}
+      </label>
       <input
+        className="form-input"
         type="text"
         id="newTodo"
         name="title"
         value={todo.title}
         onChange={handleChange}
       ></input>
-      <button>Lägg till</button>
+      <button className="form-button">Lägg till</button>
     </form>
   );
 };

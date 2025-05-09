@@ -1,0 +1,10 @@
+.add-form {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .form-button {
+    padding: 7px;
+  }
+}

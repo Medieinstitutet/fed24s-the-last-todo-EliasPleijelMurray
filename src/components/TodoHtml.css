@@ -1,8 +1,11 @@
 .todo {
   display: flex;
-}
+  align-items: center;
 
-.trash-can {
-  background-color: #242424;
-  margin-left: auto;
+  .trash-can-button {
+    background-color: #242424;
+    margin-left: auto;
+    padding: 5px;
+    height: 30px;
+  }
 }
