@@ -95,10 +95,7 @@ export default tseslint.config({
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller alla krav för både betyg G och VG. Den är välstrukturerad, och det finns inga större brister i kodkvalitet eller funktionalitet. Hårdkodade todos visas korrekt på skärmen, och funktioner för att lägga till, markera som klar, och sortera todos är implementerade och fungerar som förväntat. React-funktionalitet och moderna JavaScript-tekniker används korrekt.
+📌 **Motivering:** Koden uppfyller alla krav både för G och VG. Den inkluderar en hårdkodad lista, möjligheten att ta bort och markera todo-punkter, samt en funktion för att skapa nya todos. Applikationen inkluderar även funktioner för att visa och hantera både klara och oklara händelser, sortering och användning av FontAwesome för grafiska ikoner. Koden är välstrukturerad och lättläst, även om vissa stavfel förekommer.
 
 💡 **Förbättringsförslag:**  
-1. Hantera fall då användaren försöker lägga till en tom todo. Det skulle vara bra att inte tillåta att todos läggs till utan en titel.
-2. Styling kan förbättras ytterligare med mer visuellt tilltalande design, antingen genom att använda fler funktioner från ett CSS-ramverk som Tailwind eller genom att lägga till fler egendefinierade stilar.
-3. Det finns några stavfel i funktionsnamn (t.ex. 'handelClick' istället för 'handleClick'). Det kan förbättras för att hålla konsistens och tydlighet i koden.
-4. Lägg till användarvänlig feedback efter olika användaråtgärder, t.ex. ett meddelande när en todo har lagts till.
+1. I några funktionsnamn, t.ex. `handelClick`, finns stavfel. Det korrekta ska vara `handleClick`. Konsistens i namngivning är viktigt för läsbarhet. 2. Den nuvarande implementeringen av `addTodo` inte säkerställer att varje ny Todo får ett unikt ID, då det förlitar sig på `Math.random()`, vilket kan orsaka kollisioner. Överväg att använda ett säkrare sätt att generera unika ID:n. 3. För att förbättra användargränssnittet kan betoning på responsiv design med CSS ytterligare optimeras eller användning av ett CSS-ramverk som Tailwind eller Material UI övervägas för att enkelt hantera UI komponenter. Annars är koden väl utförd och funktionaliteten är solid med både grundläggande och utökade krav implementerade.
