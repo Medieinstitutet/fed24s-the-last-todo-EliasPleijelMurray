@@ -95,7 +95,10 @@ export default tseslint.config({
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller alla krav för både G och VG, vilket inkluderar: hantering av en hårdkodad todolista, möjlighet att markera todos som klara och oklara, samt att implemente de valfria kraven om att tillåta användare skapa nya todos och sortera dem. Eleven har också använt ett grafiskt ramverk (FontAwesome) för ikoner och har strukturerad sin CSS väl med flexbox. Koden är relativt ren och välstrukturerad.
+📌 **Motivering:** Koden uppfyller alla krav för både betyg G och VG. Den är välstrukturerad, och det finns inga större brister i kodkvalitet eller funktionalitet. Hårdkodade todos visas korrekt på skärmen, och funktioner för att lägga till, markera som klar, och sortera todos är implementerade och fungerar som förväntat. React-funktionalitet och moderna JavaScript-tekniker används korrekt.
 
 💡 **Förbättringsförslag:**  
-Det finns en förbättringspotential i hantering av state, t.ex. genom att använda useReducer för komplex statehantering för större applikationer.,Kommentarer i koden kan hjälpa framtida förståelse och underhåll.,Variabel- och funktionsnamn som `handelClick` bör stavas korrekt som `handleClick`.,Bättre typkontroll vid tilldelning av tomma strängar till ID i `TodoForm`, se till att nyckelnamnet i state matchar det som används vid objektinstansiering (f.x. id) för att säkerställa konsekvent beteende.
+1. Hantera fall då användaren försöker lägga till en tom todo. Det skulle vara bra att inte tillåta att todos läggs till utan en titel.
+2. Styling kan förbättras ytterligare med mer visuellt tilltalande design, antingen genom att använda fler funktioner från ett CSS-ramverk som Tailwind eller genom att lägga till fler egendefinierade stilar.
+3. Det finns några stavfel i funktionsnamn (t.ex. 'handelClick' istället för 'handleClick'). Det kan förbättras för att hålla konsistens och tydlighet i koden.
+4. Lägg till användarvänlig feedback efter olika användaråtgärder, t.ex. ett meddelande när en todo har lagts till.
